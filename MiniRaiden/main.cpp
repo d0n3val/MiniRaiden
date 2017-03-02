@@ -12,8 +12,25 @@ int main(int argc, char* args[])
 	SDL_Texture* ship = SDL_CreateTextureFromSurface(renderer, SDL_LoadBMP("ship.bmp"));
 	SDL_Rect r;
 
-	for (;;)
+	bool run = true;
+	while(run)
 	{
+		// Input ---------------
+
+		SDL_Event event;
+		while (SDL_PollEvent(&event))
+		{
+			if (event.type == SDL_QUIT)
+				run = false;
+
+			switch (event.type)
+			{
+
+			}
+		}
+
+		// Graphics ---------------
+
 		SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 		SDL_RenderClear(renderer);
 
